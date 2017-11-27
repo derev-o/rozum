@@ -28,20 +28,23 @@ body {
 
 .bookshelf {
     position: relative;
-    margin: 40px auto 0;
+    margin: 0;
     list-style: none;
-    float: left;
-    display: block;
+    display: inline-table;
+    background: #f2f2f2;
     text-align: center;
+  /*   display: block;
+    float: left; */ 
 
 }
 
 .bookshelf figure {
 
-    max-width: 75%;
-    width: 300px;
-    /**/
-    margin: 40px 0 20px 0;
+    background: #f2f2f2;   
+    width: 25%;
+    min-width: 300px;
+    /* max-width: 75%;  */
+    margin: 0;
     padding: 45px 0 0 0;
     position: relative;
     display: inline-block;

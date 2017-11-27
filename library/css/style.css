@@ -518,7 +518,6 @@ textarea {
     transition: background-color 0.7s ease;
 }
 
-
 .sidebar {
     margin-top: initial !important;
     padding-left: 0px !important;
@@ -2043,8 +2042,15 @@ you can add resource intensive styles.
   /*********************
   LAYOUT & GRID STYLES
   *********************/
-  .wrap {
-    width: 760px; }
+  /* .wrap {
+    width: 760px; } */
+    .wrap{  
+      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 15px;
+      padding-right: 15px; 
+    }
 
   /*********************
   HEADER STYLES
@@ -2119,8 +2125,16 @@ you can add resource intensive styles.
   be seen on the Desktop.
   
   ******************************************************************/
-  .wrap {
-    width: 1040px; } }
+/*   .wrap {
+    width: 1040px; } */
+    .wrap{  
+      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 15px;
+      padding-right: 15px; 
+    }
+  }  
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
