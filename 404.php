@@ -28,7 +28,7 @@
 
 							<footer class="article-footer">
 
-									<p><?php _e( 'This is the 404.php template.', 'rozumtheme' ); ?></p>
+									<p><?php _e( 'Sorry, nothing found.', 'rozumtheme' ); ?></p>
 
 							</footer>
 
