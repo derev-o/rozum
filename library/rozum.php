@@ -177,6 +177,9 @@ function rozum_scripts_and_styles() {
 
 	  	// register smart-menu simple theme stylesheet
 		wp_register_style( 'rozum-sm-simple', get_stylesheet_directory_uri() . '/library/css/smart-menu/sm-simple.css', array(), '', 'all' );
+		
+		  // register smart-menu simple theme stylesheet
+		  wp_register_style( 'rozum-sm-perspective', get_stylesheet_directory_uri() . '/library/css/smart-menu/sm-perspective.css', array(), '', 'all' );
 
 
 		
@@ -224,6 +227,7 @@ function rozum_scripts_and_styles() {
 		//***** ENQUEUE STYLES AND SCRIPTS *****//
 		wp_enqueue_style( 'rozum-sm-core' );
 		wp_enqueue_style( 'rozum-sm-simple' );
+		wp_enqueue_style( 'rozum-sm-perspective' );
 		wp_enqueue_style( 'rozum-bootstrap' );
 	  	wp_enqueue_style( 'rozum-bootstrap-responsive' );
 	  	wp_enqueue_style( 'rozum-bootstrap-theme' );
@@ -403,6 +407,26 @@ function rozum_excerpt_more($more) {
 
 
 /*********************
+ROZUM WALKER CLASS
+ *********************/
+
+function rozum_nav_wrap() {
+	// default value of 'items_wrap' is <ul id="%1$s" class="%2$s">%3$s</ul>'
+  // open the <ul>, set 'menu_class' and 'menu_id' values
+  $wrap  = '<ul id="%1$s" class="%2$s">';
+  // the static link 
+  $wrap .= '<li class="my-static-link"><a id="showMenu"><- MENU</a></li>';
+  // get nav items as configured in /wp-admin/
+  $wrap .= '%3$s';
+  // close the <ul>
+  $wrap .= '</ul>';
+  // return the result
+  
+  return $wrap;
+}
+
+
+/*********************
 BOOTSTRAP WALKER CLASS
  *********************/
 class wp_bootstrap_navwalker extends Walker_Nav_Menu {
@@ -466,7 +490,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			if ( $args->has_children && $depth === 0 ) {
 				$atts['href']   		= ! empty( $item->url ) ? $item->url : '';
 				$atts['data-toggle']	= 'dropdown';
-				$atts['class']			= 'dropdown-toggle';
+				$atts['class']			= 'has-submenu';
 				$atts['aria-haspopup']	= 'true';
 			} else {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
@@ -492,7 +516,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			else
 				$item_output .= '<a'. $attributes .'>';
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
+			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="sub-arrow"></span></a>' : '</a>';
 			$item_output .= $args->after;
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 		}

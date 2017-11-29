@@ -33,7 +33,6 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_before_main_content' );
 	?>
-	asdasdasd
     <?php 
 //m-all t-2of3 d-5of7 cf
 if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
@@ -62,7 +61,6 @@ if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 	?>
     
 
-<main id="main" class="col-md-12">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -108,7 +106,6 @@ if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 		<?php endif; ?>
     
 
- </main>
     
 </div>
 

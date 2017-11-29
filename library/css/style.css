@@ -134,7 +134,9 @@ html {
   -ms-text-size-adjust: 100%;
   /* 2 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */ }
+  /* 2 */ 
+  background-color: #b8b6b4
+}
 
 /**
  * Remove default margin.
@@ -546,6 +548,8 @@ div#main-perspective.animate .outer-nav.left {
     height: auto;*/
     opacity: 1;    
     height: 100%;
+    width: 35%;
+    min-width: 200px;
 }
 
 /**
@@ -1579,9 +1583,12 @@ HEADER STYLES
   background-color: #323944; }
 
 #logo {
-  margin: 0.75em 0; }
-  #logo a {
-    color: white; }
+  margin: 0.75em 0; 
+  padding: 0 15px;
+}
+#logo a {
+    color: white; 
+}
 
 /*********************
 NAVIGATION STYLES

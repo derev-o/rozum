@@ -1,0 +1,62 @@
+
+  /* Switch to perspective layout
+  -----------------------------------------------
+     These 
+  -----------------------------------------------*/
+  /* start... (it's not recommended editing these rules) */
+
+.sm-wm-perspective {
+  border: 1px solid #bbbbbb;
+  background: white;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.sm-wm-perspective a, .sm-wm-perspective a:hover, .sm-wm-perspective a:focus, .sm-wm-perspective a:active {
+  padding: 13px 20px;
+  /* make room for the toggle button (sub indicator) */
+  padding-right: 58px;
+  color: #555555;
+  font-family: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 17px;
+  text-decoration: none;
+}
+.sm-wm-perspective a.current {
+  background: #555555;
+  color: white;
+}
+.sm-wm-perspective a.disabled {
+  color: #cccccc;
+}
+.sm-wm-perspective a span.sub-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  left: auto;
+  right: 4px;
+  width: 34px;
+  height: 34px;
+  overflow: hidden;
+  font: bold 14px/34px monospace !important;
+  text-align: center;
+  text-shadow: none;
+  background: rgba(0, 0, 0, 0.08);
+}
+.sm-wm-perspective a.highlighted span.sub-arrow:before {
+  display: block;
+  content: '-';
+}
+.sm-wm-perspective li {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+.sm-wm-perspective > li:first-child {
+  border-top: 0;
+}
+.sm-wm-perspective ul {
+  background: rgba(179, 179, 179, 0.1);
+}
+.sm-wm-perspective ul a, .sm-wm-perspective ul a:hover, .sm-wm-perspective ul a:focus, .sm-wm-perspective ul a:active {
+  font-size: 14px;
+}
