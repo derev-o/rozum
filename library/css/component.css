@@ -33,6 +33,7 @@ body {
     display: inline-table;
     background: #f2f2f2;
     text-align: center;
+    width: 100%;
   /*   display: block;
     float: left; */ 
 
@@ -155,10 +156,14 @@ body {
 }
 
 .bookshelf figcaption h2 {
-    /*margin: 1em 0 0 0;*/
+    margin: 1em 0 0 0;
     font-weight: 300;
     font-size: 1.8em;
-    font-family: "Abril Fatface", serif;
+    font-family: "Lato", sans-serif;
+}
+
+a .woocommerce-loop-product__title {
+    font-size: 1.3em !important;
 }
 
 .bookshelf figcaption h2 span {
@@ -196,10 +201,9 @@ body {
     margin: 0;
     padding: 60px 30px 0 30px;
     list-style: none;
-    text-align: left;
 }
 
-.csstransformspreserve3d .details ul { padding: 60px 30px 0 70px }
+.csstransformspreserve3d .details ul { padding: 20px 20px 0 20px }
 
 .details ul li {
     margin: 0 0 10px;
@@ -224,7 +228,7 @@ body {
     left: 0;
     height: 25px;
     width: 100%;
-    background: linear-gradient(to bottom,rgba(255,255,255,0.3),#fff);
+    background: linear-gradient(to bottom,rgba(255,255,255,0.1),#fff);
 }
 
 .close-details {
@@ -757,7 +761,9 @@ body {
     -webkit-transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
     -webkit-transform: translateX(-20px) rotateY(90deg);
-    transform: translateX(-20px) rotateY(90deg);
+    /* transform: translateX(-20px) rotateY(90deg); */
+    transform: translateX(-20px) translateY(110px) rotateY(90deg);
+    margin: 0 0 0 50px;
 }
 
 .no-csstransformspreserve3d .details-open .book {
@@ -805,6 +811,7 @@ body {
 .details-open .details ul li:first-child {
     -webkit-transition-delay: 0.1s;
     transition-delay: 0.1s;
+    background: rgba(255,255,255,0.8);
 }
 
 .details-open .details ul li:nth-child(2) {
@@ -837,7 +844,7 @@ body {
     visibility: hidden;
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: linear-gradient(to bottom,#fff,rgba(255,255,255,0.2));
     content: '';
     opacity: 0;
     -webkit-transition: opacity 0.3s, visibility 0s 0.3s;

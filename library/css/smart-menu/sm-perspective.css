@@ -60,3 +60,24 @@
 .sm-wm-perspective ul a, .sm-wm-perspective ul a:hover, .sm-wm-perspective ul a:focus, .sm-wm-perspective ul a:active {
   font-size: 14px;
 }
+.sm-wm-perspective a .sub-arrow::before {
+  content: '+';
+}
+.sm-wm-perspective a.highlighted .sub-arrow::before {
+  content: '-';
+}
+
+/* SMALL SCREEN SIZES */
+/* 
+.outer-nav.left{
+  left: 10px
+}
+.outer-nav.vertical{
+  top: 10px;
+}
+div#main-perspective.animate .outer-nav.left{
+  opacity: 1;
+  height: 100%;
+  width: 75%;
+  min-width: 200px;
+} */

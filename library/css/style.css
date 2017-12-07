@@ -144,6 +144,32 @@ html {
 body {
   margin: 0; }
 
+
+/* Top Gap */  
+main#main {
+    top: -100px;
+    position: relative;
+}
+
+nav#main-nav {
+  padding-bottom: 100px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+ul#main-menu {
+  display: flex;
+  align-items: center;
+}
+
+div#container {
+  background-color: white;
+  border-radius: 3px;
+  margin-bottom: 1.5em;
+  border: 1px solid #cccccc;
+  padding: 0px 20px 20px 20px;
+}
+
 /* ==========================================================================
    Links
    ========================================================================== */
@@ -465,7 +491,11 @@ textarea {
  */
 .woocommerce a.added_to_cart{
     display: block;
-    margin: 10px;
+    background: #ebe9eb;
+    width: 180px;
+    padding: 1em;
+    margin: 0 auto;
+    box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.4);
 }
 
 /**
@@ -493,7 +523,7 @@ textarea {
 
 .details ul li:nth-child(2)::before {
     position: absolute;
-    width: 20%;
+    width: 100%;
     height: 1px;
     background: rgba(0, 0, 0, 0.1);
     content: '';
@@ -522,8 +552,6 @@ textarea {
 
 .sidebar {
     margin-top: initial !important;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
 }
 
 .widget {
@@ -569,6 +597,7 @@ figure .buttons p {
 
 figure a.button.add_to_cart_button.added {
   background-color: deepskyblue;
+  display: none;
 }
 
 span.price {
@@ -871,6 +900,18 @@ There are four types, but you can add or customize
 them however you see fit.
 */
 @media (max-width: 767px) {
+
+  /* ROZUM */
+  div#main-perspective.animate .outer-nav.left{
+    width: 75%;
+  }
+  div#main-perspective.animate .outer-nav.left{
+    left: 10px;
+  }
+  div#main-perspective.animate .outer-nav.vertical{
+    top: 10px;
+  }
+
   .m-all {
     float: left;
     padding-right: 0.75em;
@@ -1209,7 +1250,7 @@ textarea,
   vertical-align: middle;
   box-shadow: none;
   border: 0;
-  width: 100%;
+  width: calc(100% - 24px);
   max-width: 400px;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #eaedf2;
@@ -1526,12 +1567,12 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #f01d4f;
+  color: #448AFF;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #d10e3c; }
+    color: #323943; }
   a:link, a:visited:link {
     /*
     this highlights links on iPhones/iPads.

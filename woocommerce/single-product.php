@@ -22,7 +22,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-<div class="container-fluid">
+<!-- <div class="container-fluid"> -->
+<div id="content">
+<div id="inner-content" class="content-fluid cf">
+<main id="main" class="col-md-12 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 	<?php
 		/**
@@ -52,7 +55,7 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_after_main_content' );
 	?>
 
-	</div>
+	<!-- </div> -->
 
 	<?php
 		/**
@@ -62,5 +65,9 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_sidebar' );
 	?>
+
+</div>
+</div>
+</main>	
 
 <?php get_footer( 'shop' ); ?>

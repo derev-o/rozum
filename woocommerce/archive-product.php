@@ -22,7 +22,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-<div id="inner-content" class="container-fluid">
+<div id="content">
+<div id="inner-content" class="content-fluid cf">
+<main id="main" class="col-md-12 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+
     
     <?php
 		/**
@@ -33,8 +36,9 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_before_main_content' );
 	?>
-    <?php 
-//m-all t-2of3 d-5of7 cf
+
+    
+	<?php 
 if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
 			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
@@ -79,13 +83,11 @@ if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 				<?php woocommerce_product_subcategories(); ?>
 				
 
-
 					<?php while ( have_posts() ) : the_post(); ?>
 
 						<?php wc_get_template_part( 'content', 'product' ); ?>
 
 					<?php endwhile; // end of the loop. ?>
-					
 
 
 			<?php woocommerce_product_loop_end(); ?>
@@ -107,7 +109,7 @@ if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
     
 
     
-</div>
+
 
 	<?php
 		/**
@@ -118,5 +120,7 @@ if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 		do_action( 'woocommerce_after_main_content' );
 	?>
 
-
+</div>
+</div>
+</main>	
 <?php get_footer( 'shop' ); ?>

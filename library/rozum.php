@@ -178,8 +178,11 @@ function rozum_scripts_and_styles() {
 	  	// register smart-menu simple theme stylesheet
 		wp_register_style( 'rozum-sm-simple', get_stylesheet_directory_uri() . '/library/css/smart-menu/sm-simple.css', array(), '', 'all' );
 		
-		  // register smart-menu simple theme stylesheet
-		  wp_register_style( 'rozum-sm-perspective', get_stylesheet_directory_uri() . '/library/css/smart-menu/sm-perspective.css', array(), '', 'all' );
+		// register smart-menu simple theme stylesheet
+		wp_register_style( 'rozum-sm-perspective', get_stylesheet_directory_uri() . '/library/css/smart-menu/sm-perspective.css', array(), '', 'all' );
+		
+		// Material icons
+		wp_register_style( 'material-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array(), '', 'all' );
 
 
 		
@@ -238,6 +241,7 @@ function rozum_scripts_and_styles() {
 		wp_enqueue_style( 'rozum-component-stylesheet' );
 	  	wp_enqueue_style( 'rozum-perspective-component' );
 	  	wp_enqueue_style( 'rozum-single-book' );
+	  	wp_enqueue_style( 'material-icons' );
 
 		wp_enqueue_style( 'rozum-ie-only' );
 
@@ -415,7 +419,7 @@ function rozum_nav_wrap() {
   // open the <ul>, set 'menu_class' and 'menu_id' values
   $wrap  = '<ul id="%1$s" class="%2$s">';
   // the static link 
-  $wrap .= '<li class="my-static-link"><a id="showMenu"><- MENU</a></li>';
+  $wrap .= '<li class="my-static-link"><a id="showMenu"><i class="medium material-icons">menu</i></a></li>';
   // get nav items as configured in /wp-admin/
   $wrap .= '%3$s';
   // close the <ul>
