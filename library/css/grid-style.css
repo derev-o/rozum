@@ -1,0 +1,68 @@
+
+   * {
+    box-sizing: border-box;
+  }
+
+  body{
+    margin: 0px;
+  }
+  
+  .content-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+    font: 1.2em Helvetica, arial, sans-serif;
+  }
+  
+  .content-wrapper > * {
+    border: 2px solid #d2d2d2;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  .header {
+    grid-area: header;
+  }
+  
+  #content {
+    grid-area: content;
+  }
+  
+  #main-nav {
+    grid-area: nav;
+  }
+  
+  .sidebar {
+    grid-area: sidebar;
+  }
+  
+  .footer {
+    grid-area: footer;
+  }
+  
+  .content-wrapper {
+    display: grid;
+    grid-row-gap: 2.5px;
+    grid-column-gap: 5px;
+    grid-template-areas: "header" "nav" "content" "sidebar" "footer";
+  }
+  
+  @media (min-width: 768px) {
+    body.has_sidebar .content-wrapper {
+      grid-template-columns: 3fr 1fr;
+      grid-template-areas: "header  header" "nav nav" "content sidebar" "footer footer";
+    }
+    /* WOOCOEMMERCE ARCHIVE PAGE */
+    body.no_sidebar .content-wrapper,
+    body.woocommerce.archive .content-wrapper {
+      grid-template-columns: 4fr;
+      grid-template-areas: "header" "nav" "content" "footer";
+    }
+  }
+/*   
+  @media (min-width: 700px) {
+    .content-wrapper {
+      grid-template-columns: 5fr 2fr;
+      grid-template-areas: "header  header" "nav nav" "content sidebar" "footer footer";
+    }
+  } */

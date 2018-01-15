@@ -20,6 +20,28 @@ URL: http://themble.com/rozum/
 */
 
 /*********************
+ADD BODY CLASS IF SIDEBAR IS PRESENT
+The default wordpress head is
+a mess. Let's clean it up by
+removing all the junk we don't
+need.
+*********************/
+
+function has_sidebar($classes) {
+    if (is_active_sidebar('sidebar1')) {
+        // add 'class-name' to the $classes array
+        $classes[] = 'has_sidebar';
+	}
+	else{
+		$classes[] = 'no_sidebar';
+	}
+    // return the $classes array
+    return $classes;
+}
+add_filter('body_class','has_sidebar');
+
+
+/*********************
 WP_HEAD GOODNESS
 The default wordpress head is
 a mess. Let's clean it up by
@@ -199,9 +221,10 @@ function rozum_scripts_and_styles() {
 
 
 	    // register main stylesheet
-		wp_register_style( 'rozum-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
+		//wp_register_style( 'rozum-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
+        wp_register_style( 'rozum-stylesheet', get_stylesheet_directory_uri() . '/library/css/grid-style.css', array(), '', 'all' );
         // register bootstrap stylesheet
-		wp_register_style( 'rozum-bootstrap', get_stylesheet_directory_uri() . '/library/css/bootstrap/bootstrap.css', array(), '', 'all' );
+		//wp_register_style( 'rozum-bootstrap', get_stylesheet_directory_uri() . '/library/css/bootstrap/bootstrap.css', array(), '', 'all' );
 
 	  	// register bootstrap responsive stylesheet
 	  	//wp_register_style( 'rozum-bootstrap-responsive', get_stylesheet_directory_uri() . '/library/css/bootstrap/bootstrap-responsive.css', array(), '', 'all' );
