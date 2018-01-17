@@ -52,7 +52,6 @@ $classes = array(
 
 ?>
 
-
 <figure <?php post_class(); ?>>
 <style>
 .book[data-book="book-<?php echo $product->id; ?>"] .cover::before {
@@ -99,4 +98,3 @@ $classes = array(
 							</ul>
                         </div>
 </figure>
-

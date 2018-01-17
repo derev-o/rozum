@@ -1,14 +1,17 @@
 /* Colors */
-html {
-    background: #b8b6b4;
-}
 
 html,
-body,
-.container {
+body {
     width: 100%;
     height: 100%;
 }
+
+/*
+.container{
+    width: 100%;
+    height: 100%;
+}
+*/
 
 body {
     overflow: scroll;
@@ -24,34 +27,37 @@ body {
 }
 
 .bookshelf {
-    /* position: relative;
-    margin: 40px auto 0;
+    position: relative;
+    margin: 0;
     list-style: none;
-    text-align: center; */
-    display: grid;
-    /* border: 1px solid #000; */
-    grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(325px,14fr));
+    display: inline-table;
+    background: #f2f2f2;
+    text-align: center;
     width: 100%;
+  /*   display: block;
+    float: left; */ 
+
 }
 
 .bookshelf figure {
+
+    background: #f2f2f2;   
+    width: 25%;
+    min-width: 300px;
+    /* max-width: 75%;  */
+    margin: 0;
+    padding: 45px 0 0 0;
     position: relative;
     display: inline-block;
-    margin: 40px 0 0 0;
-    margin-top: 0px;
-    padding: 25px 0;
-    /* max-width: 75%;
-    width: 324px; */
     vertical-align: top;
 }
 
 /* Perspectiv wrapper, figure and book */
 
 .perspective {
-    /* position: relative;
-    height: 100%; */
+    position: relative;
     width: 100%;
+    height: 100%;
     -webkit-perspective: 1800px;
     perspective: 1800px;
 }
@@ -121,7 +127,7 @@ body {
 /* Buttons and figcaption */
 
 .buttons {
-    margin-top: 5px;
+    /* margin-top: 5px; */
     text-align: center;
 }
 
@@ -135,13 +141,15 @@ body {
     line-height: 1.5;
 }
 
-.buttons a:first-child:not(:only-child) { border-right: 1px solid rgba(100, 105, 106, 0.3) }
+.buttons a:first-child:not(:only-child) {
+   /* border-right: 1px solid rgba(100, 105, 106, 0.3) */
+}
 
 .buttons a:hover,
 .buttons a:active { color: #64696a }
 
 .bookshelf figcaption {
-    /* position: relative; */
+    position: relative;
     top: 100%;
     padding: 0 2em;
     text-align: center;
@@ -151,14 +159,18 @@ body {
     margin: 1em 0 0 0;
     font-weight: 300;
     font-size: 1.8em;
-    font-family: "Abril Fatface", serif;
+    font-family: "Lato", sans-serif;
+}
+
+a .woocommerce-loop-product__title {
+    font-size: 1.3em !important;
 }
 
 .bookshelf figcaption h2 span {
     position: relative;
     display: block;
     margin: 1em 0 0 0;
-    padding: 1em 0 0 0;
+    /*padding: 1em 0 0 0;*/
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 400;
@@ -189,12 +201,9 @@ body {
     margin: 0;
     padding: 60px 30px 0 30px;
     list-style: none;
-    text-align: left;
 }
 
-.csstransformspreserve3d .details ul { 
-    padding: 35px 30px 0 70px 
-}
+.csstransformspreserve3d .details ul { padding: 20px 20px 0 20px }
 
 .details ul li {
     margin: 0 0 10px;
@@ -207,16 +216,19 @@ body {
     position: relative;
     margin: 0 0 15px 0;
     padding: 0 0 15px 0;
-    /* text-align: justify; */
+    /*text-align: justify;*/
 }
 
 .details ul li:first-child::after {
+	/*
     top: 100%;
     left: 0;
-}
-
-li.book_excerpt p {
-    margin: 0px;
+	*/
+	top: 75px;
+    left: 0;
+    height: 25px;
+    width: 100%;
+    background: linear-gradient(to bottom,rgba(255,255,255,0.1),#fff);
 }
 
 .close-details {
@@ -734,13 +746,13 @@ li.book_excerpt p {
 /* Details open / view details */
 
 .bookshelf figure {
-    z-index: 100;
+    /*z-index: 100;*/
     -webkit-transition: z-index 0s 0.3s;
     transition: z-index 0s 0.3s;
 }
 
 .bookshelf figure.details-open {
-    z-index: 101;
+    /*z-index: 101;*/
     -webkit-transition: none;
     transition: none;
 }
@@ -748,10 +760,10 @@ li.book_excerpt p {
 .csstransformspreserve3d .details-open .book {
     -webkit-transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
-    /* -webkit-transform: translateX(-36px) rotateY(90deg);
-    transform: translateX(-36px) rotateY(90deg); */
-    transform: translateX(-20px) rotateY(90deg);
-    margin: 0 0 0 50px; 
+    -webkit-transform: translateX(-20px) rotateY(90deg);
+    /* transform: translateX(-20px) rotateY(90deg); */
+    transform: translateX(-20px) translateY(110px) rotateY(90deg);
+    margin: 0 0 0 50px;
 }
 
 .no-csstransformspreserve3d .details-open .book {
@@ -799,6 +811,7 @@ li.book_excerpt p {
 .details-open .details ul li:first-child {
     -webkit-transition-delay: 0.1s;
     transition-delay: 0.1s;
+    background: rgba(255,255,255,0.8);
 }
 
 .details-open .details ul li:nth-child(2) {
@@ -831,7 +844,7 @@ li.book_excerpt p {
     visibility: hidden;
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: linear-gradient(to bottom,#fff,rgba(255,255,255,0.2));
     content: '';
     opacity: 0;
     -webkit-transition: opacity 0.3s, visibility 0s 0.3s;

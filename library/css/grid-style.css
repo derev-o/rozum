@@ -46,6 +46,14 @@
     grid-column-gap: 5px;
     grid-template-areas: "header" "nav" "content" "sidebar" "footer";
   }
+
+  /* #bookshelf{
+    width: 100%;
+    display: grid;
+    border:1px solid #000;
+    grid-gap: 10px;
+		grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+  } */
   
   @media (min-width: 768px) {
     body.has_sidebar .content-wrapper {
